@@ -61,11 +61,11 @@ authrouter.post('/login', async function (req, res) {
                 res.send(responseObj);
             }else{
                 
-                res.status(401).send({ msg: 'Invalid credentials'});
+                res.status(401).send({code:0, msg: 'Invalid credentials'});
                 return;
             }
       }else{
-        res.status(404).send({ msg: 'User Not Found'});
+        res.status(404).send({ code:-1 ,msg: 'User Not Found'});
       }
       
     }catch(err){
