@@ -18,4 +18,13 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use('/api/auth', authrouter);
+
+// path params
+app.get('/api/:name', (req, res) => {
+
+    // Get the path params
+    res.send({ path: req.params, query: req.query });
+  });
+  
+ 
 app.listen(5050,()=>{console.log("successfully port is running")});
